@@ -9,12 +9,10 @@ const LandingPage = () => {
       {/* Hero Section */}
       <section className="hero">
         <div className="container">
-          <div className="academic-badge">Educational Technology Platform</div>
-          <h1>SchoolEdge CBT</h1>
+          <div className="academic-badge">Flexible, Robust & Secure CBT Platform</div>
+          <h1>Administer Computer-Based Exams With Ease</h1>
           <p>
-            The most advanced Computer-Based Testing platform designed specifically for schools
-            and educational institutions. Create, manage, and deliver secure online exams
-            with comprehensive analytics and automated grading.
+            SchoolEdge CBT enables your school to conduct secure, computer-based exams using your own questions and manage academic content with full control. Run exams offline (LAN) or online, and protect your intellectual property—only licensed users can access your content.
           </p>
           {!isAuthenticated ? (
             <div>
@@ -32,59 +30,45 @@ const LandingPage = () => {
           )}
         </div>
       </section>
-
       {/* Features Section */}
       <section className="container">
         <div className="features">
           <div className="feature">
-            <h3>🎯 Advanced Test Creation</h3>
+            <h3>🖥️ Offline & Online Exams</h3>
             <p>
-              Create comprehensive exams with multiple question types including multiple choice,
-              essay questions, drag-and-drop, and interactive elements. Build question banks
-              and randomize tests for academic integrity.
+              Conduct exams in-venue (offline, LAN/wireless) or remotely (online). Run both modes simultaneously for maximum flexibility.
             </p>
           </div>
-
           <div className="feature">
-            <h3>🔒 Secure Testing Environment</h3>
+            <h3>🔒 Secure Content Management</h3>
             <p>
-              Ensure exam security with lockdown browsers, time limits, and anti-cheating measures.
-              Monitor student activity in real-time and maintain academic integrity standards.
+              Protect your exam questions and academic resources. Only licensed users can access content, ensuring your intellectual property is safe.
             </p>
           </div>
-
           <div className="feature">
-            <h3>� Instant Results & Analytics</h3>
+            <h3>⚡ Easy Setup & Licensing</h3>
             <p>
-              Get immediate grading for objective questions and detailed analytics on student
-              performance. Track class progress, identify learning gaps, and generate comprehensive reports.
+              Download, install, and get started in minutes. Flexible licensing per subject or content, with discounts for bulk purchases.
             </p>
           </div>
         </div>
-
-        {/* Additional Features */}
         <div className="features">
           <div className="feature">
-            <h3>👥 Student Management</h3>
+            <h3>📊 Powerful Analytics</h3>
             <p>
-              Easily manage student accounts, create classes, and organize students by grade levels
-              or subjects. Bulk import student data and integrate with existing school systems.
+              Get instant results, monitor candidate progress, and generate detailed reports for continuous assessment and improvement.
             </p>
           </div>
-
           <div className="feature">
-            <h3>� Multi-Device Support</h3>
+            <h3>👩‍🏫 Multi-Role Management</h3>
             <p>
-              Students can take tests on any device - computers, tablets, or smartphones.
-              Responsive design ensures optimal experience across all screen sizes.
+              Manage candidates, teachers, and content with ease. Assign roles, set up virtual classes, and control access from a central admin panel.
             </p>
           </div>
-
           <div className="feature">
-            <h3>🎓 Grade Management</h3>
+            <h3>🛡️ Device Monitoring & Control</h3>
             <p>
-              Automatically calculate grades, export gradebooks, and integrate with popular
-              Learning Management Systems. Customize grading scales and rubrics.
+              Monitor and control all connected devices during exams. Ensure compliance and maintain exam integrity at all times.
             </p>
           </div>
         </div>
