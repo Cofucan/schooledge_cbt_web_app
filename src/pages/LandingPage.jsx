@@ -86,10 +86,10 @@ const LandingPage = () => {
 
           <div className="features">
             <div className="card">
-              <div className="academic-badge">Small Schools</div>
-              <h3>Starter Plan</h3>
-              <h2 style={{ color: 'var(--primary-color)', marginBottom: '24px' }}>$29/month</h2>
-              <p style={{ color: 'var(--text-secondary)', marginBottom: '24px' }}>Perfect for schools with up to 100 students</p>
+              <div className="academic-badge">Regular</div>
+              <h3>Regular</h3>
+              <h2 style={{ color: 'var(--primary-color)', marginBottom: '24px' }}>$299/year</h2>
+              <p style={{ color: 'var(--text-secondary)', marginBottom: '24px' }}>1 - 100 students</p>
               <ul style={{ textAlign: 'left', lineHeight: '2', marginBottom: '32px' }}>
                 <li>Up to 100 active students</li>
                 <li>5 teacher accounts</li>
@@ -110,19 +110,17 @@ const LandingPage = () => {
             </div>
 
             <div className="card pricing-highlight">
-              <div className="academic-badge">Most Popular</div>
-              <h3>Professional Plan</h3>
-              <h2 style={{ color: 'var(--primary-color)', marginBottom: '24px' }}>$89/month</h2>
-              <p style={{ color: 'var(--text-secondary)', marginBottom: '24px' }}>Ideal for medium-sized schools and academies</p>
+              <div className="academic-badge">Standard</div>
+              <h3>Standard</h3>
+              <h2 style={{ color: 'var(--primary-color)', marginBottom: '24px' }}>$499/year</h2>
+              <p style={{ color: 'var(--text-secondary)', marginBottom: '24px' }}>101 - 200 students</p>
               <ul style={{ textAlign: 'left', lineHeight: '2', marginBottom: '32px' }}>
-                <li>Up to 500 active students</li>
-                <li>25 teacher accounts</li>
+                <li>Up to 200 active students</li>
+                <li>10 teacher accounts</li>
                 <li>Advanced question types</li>
                 <li>Detailed analytics & reporting</li>
                 <li>Priority support</li>
-                <li>10GB storage</li>
-                <li>LMS integration</li>
-                <li>Custom branding</li>
+                <li>5GB storage</li>
               </ul>
               {!isAuthenticated ? (
                 <Link to="/register" className="btn" style={{ width: '100%' }}>
@@ -136,16 +134,40 @@ const LandingPage = () => {
             </div>
 
             <div className="card">
-              <div className="academic-badge">Large Institutions</div>
-              <h3>Enterprise Plan</h3>
-              <h2 style={{ color: 'var(--primary-color)', marginBottom: '24px' }}>$249/month</h2>
-              <p style={{ color: 'var(--text-secondary)', marginBottom: '24px' }}>Comprehensive solution for large schools and districts</p>
+              <div className="academic-badge">Premium</div>
+              <h3>Premium</h3>
+              <h2 style={{ color: 'var(--primary-color)', marginBottom: '24px' }}>$899/year</h2>
+              <p style={{ color: 'var(--text-secondary)', marginBottom: '24px' }}>201 - 500 students</p>
               <ul style={{ textAlign: 'left', lineHeight: '2', marginBottom: '32px' }}>
-                <li>Unlimited students</li>
-                <li>Unlimited teacher accounts</li>
+                <li>Up to 500 active students</li>
+                <li>25 teacher accounts</li>
                 <li>All question types & features</li>
                 <li>Advanced analytics dashboard</li>
                 <li>24/7 dedicated support</li>
+                <li>20GB storage</li>
+              </ul>
+              {!isAuthenticated ? (
+                <Link to="/register" className="btn" style={{ width: '100%' }}>
+                  Start Free Trial
+                </Link>
+              ) : (
+                <Link to="/subscriptions" className="btn" style={{ width: '100%' }}>
+                  Select Plan
+                </Link>
+              )}
+            </div>
+
+            <div className="card">
+              <div className="academic-badge">Platinum</div>
+              <h3>Platinum</h3>
+              <h2 style={{ color: 'var(--primary-color)', marginBottom: '24px' }}>$1999/year</h2>
+              <p style={{ color: 'var(--text-secondary)', marginBottom: '24px' }}>501 - 2000 students</p>
+              <ul style={{ textAlign: 'left', lineHeight: '2', marginBottom: '32px' }}>
+                <li>Up to 2000 active students</li>
+                <li>100 teacher accounts</li>
+                <li>All question types & features</li>
+                <li>Advanced analytics dashboard</li>
+                <li>Dedicated account manager</li>
                 <li>Unlimited storage</li>
                 <li>Full API access</li>
                 <li>Custom integrations</li>
