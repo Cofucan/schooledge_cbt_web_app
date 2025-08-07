@@ -1,20 +1,16 @@
 import axios from 'axios';
 
-// Get API URL based on environment
+// Get API URL based on environment (Vite uses import.meta.env with VITE_ prefix)
 const getApiUrl = () => {
-  const env = process.env.REACT_APP_API_ENV || 'local';
-  console.log('Environment:', env);
-  console.log('Local API URL:', process.env.REACT_APP_API_URL_LOCAL);
-  console.log('Live API URL:', process.env.REACT_APP_API_URL_LIVE);
-
-  if (env === 'live') {
-    return process.env.REACT_APP_API_URL_LIVE || 'https://api.schooledge.com';
-  }
-  return process.env.REACT_APP_API_URL_LOCAL || 'http://localhost:4433';
+  const env = import.meta.env.VITE_API_ENV || 'local';
+  const localUrl = import.meta.env.VITE_API_URL_LOCAL || import.meta.env.VITE_API_URL || 'http://localhost:4433';
+  const liveUrl = import.meta.env.VITE_API_URL_LIVE || 'https://api.schooledge.com';
+  if (env === 'live') return liveUrl;
+  return localUrl;
 };
 
 const API_BASE_URL = getApiUrl();
-console.log('Using API Base URL:', API_BASE_URL);
+console.log('[API] Using Base URL:', API_BASE_URL);
 
 // Create axios instance
 const apiClient = axios.create({
@@ -56,7 +52,10 @@ export const authAPI = {
     apiClient.post('/account/login/', { email, password }),
 
   register: (userData) =>
-    apiClient.post('/account/register/', userData)
+    apiClient.post('/account/register/', userData),
+
+  getProfile: () =>
+    apiClient.get('/account/profile/')
 };
 
 // Subscription API calls (based on your schema)
