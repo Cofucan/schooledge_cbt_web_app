@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import axios from 'axios';
+import { apiClient, authAPI } from '../services/api';
 
 const AuthContext = createContext();
 
@@ -19,25 +19,18 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     const token = localStorage.getItem('token');
     if (token) {
-      axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
-      // You can add a call to verify the token here
-      // verifyToken(token);
+      apiClient.defaults.headers.Authorization = `Bearer ${token}`;
+      // Optionally verify token here
     }
     setLoading(false);
   }, []);
 
   const login = async (email, password) => {
     try {
-      // Replace with your actual API endpoint
-      const response = await axios.post('/api/auth/login', {
-        email,
-        password
-      });
-
+      const response = await authAPI.login(email, password);
       const { token, user } = response.data;
-
       localStorage.setItem('token', token);
-      axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+      apiClient.defaults.headers.Authorization = `Bearer ${token}`;
       setUser(user);
 
       return { success: true };
@@ -51,13 +44,10 @@ export const AuthProvider = ({ children }) => {
 
   const register = async (userData) => {
     try {
-      // Replace with your actual API endpoint
-      const response = await axios.post('/api/auth/register', userData);
-
+      const response = await authAPI.register(userData);
       const { token, user } = response.data;
-
       localStorage.setItem('token', token);
-      axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+      apiClient.defaults.headers.Authorization = `Bearer ${token}`;
       setUser(user);
 
       return { success: true };
@@ -71,7 +61,7 @@ export const AuthProvider = ({ children }) => {
 
   const logout = () => {
     localStorage.removeItem('token');
-    delete axios.defaults.headers.common['Authorization'];
+    delete apiClient.defaults.headers.Authorization;
     setUser(null);
   };
 
