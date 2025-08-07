@@ -1,15 +1,19 @@
 :root {
+  --hero-bg-image: url('/public/assets/josh-sorenson-nVeTGyYosKY-unsplash.jpg'); /* Place your image in public/assets/hero-bg.jpg */
+  --hero-bg-opacity: 0.18;
   font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   /* Academic Color Scheme */
-  --primary-color: #1e3a8a;        /* Deep blue */
-  --primary-light: #3b82f6;        /* Lighter blue */
-  --secondary-color: #059669;       /* Emerald green */
-  --accent-color: #dc2626;          /* Red for alerts */
-  --warning-color: #d97706;         /* Amber for warnings */
-  --success-color: #065f46;         /* Dark green for success */
+  /* Academic Orange Theme */
+  --primary-color: #ff8800;        /* Orange */
+  --primary-light: #ffb347;        /* Light orange */
+  --primary-dark: #c66900;         /* Darker orange */
+  --secondary-color: #7f9200;      /* Deep blue for contrast */
+  --accent-color: #dc2626;         /* Red for alerts */
+  --warning-color: #ffb300;        /* Amber for warnings */
+  --success-color: #388e3c;        /* Green for success */
 
   /* Neutral colors */
   --gray-50: #f9fafb;
@@ -230,7 +234,9 @@ button:disabled {
 }
 
 .navbar {
-  background: linear-gradient(135deg, var(--primary-color) 0%, #1e40af 100%);
+  background-color: var(--primary-color);
+  position: relative;
+  z-index: 10;
   padding: 16px 0;
   margin-bottom: 0;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
@@ -323,9 +329,7 @@ button:disabled {
 .hero {
   text-align: center;
   padding: 80px 20px;
-  background: linear-gradient(135deg, var(--primary-color) 0%, #1e40af 50%, var(--secondary-color) 100%);
-  color: white;
-  margin-bottom: 0;
+  background-color: var(--primary-color);
   position: relative;
   overflow: hidden;
 }
@@ -335,15 +339,19 @@ button:disabled {
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='7' cy='7' r='1'/%3E%3Ccircle cx='27' cy='7' r='1'/%3E%3Ccircle cx='47' cy='7' r='1'/%3E%3Ccircle cx='7' cy='27' r='1'/%3E%3Ccircle cx='27' cy='27' r='1'/%3E%3Ccircle cx='47' cy='27' r='1'/%3E%3Ccircle cx='7' cy='47' r='1'/%3E%3Ccircle cx='27' cy='47' r='1'/%3E%3Ccircle cx='47' cy='47' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-  z-index: 0;
+  width: 100%;
+  height: 100%;
+  background-image: var(--hero-bg-image);
+  background-size: cover;
+  background-position: center;
+  opacity: var(--hero-bg-opacity);
+  z-index: 1;
+  pointer-events: none;
 }
 
-.hero > * {
+.hero > .container {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 .hero h1 {

@@ -15,7 +15,7 @@
   height: 3em;
   padding: 0.5em;
   will-change: filter;
-  transition: filter 300ms;
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
   border-radius: 8px;
 }
 
@@ -26,7 +26,7 @@
 .brand-logo {
   display: flex;
   align-items: center;
-  gap: 12px;
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
   font-size: 1.25rem;
   font-weight: 800;
   color: white;
@@ -37,14 +37,13 @@
   color: white;
   text-decoration: none;
 }
-
 .logo-icon {
   width: 32px;
   height: 32px;
   background: linear-gradient(135deg, var(--secondary-color), #047857);
   border-radius: 8px;
   display: flex;
-  align-items: center;
+  background: linear-gradient(90deg, transparent, var(--primary-light), transparent);
   justify-content: center;
   color: white;
   font-weight: bold;
